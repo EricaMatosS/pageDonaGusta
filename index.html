@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padaria Dona Gusta - Tradição e Sabor</title>
+    <!-- Font Awesome para os Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PALETA DE CORES ARTESANAL REAJUSTADA (Sem tons rosados) --- */
+        :root {
+            --cor-principal: #6F4E37;    /* Marrom Café */
+            --cor-secundaria: #fcefe3df;   /* Tom de Areia/Trigo Limpo */
+            --cor-escura: #3D2314;       /* Marrom Escuro Profundo */
+            --cor-clara: #fff5e1;        /* Fundo Marfim Suave, Neutro e Elegante */
+            --cor-card: #ba8a4baa;         /* Fundo dos Cards estilo Papel Kraft Claro */
+            --texto-escuro: #2B170C;     /* Texto Marrom Escuro para harmonia */
+            --whatsapp: #25D366;
+            --instagram: #E1306C;
+            --tiktok: #000000;
+        }
+
+        /* --- RESET E ESTILOS GERAIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--cor-clara);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- HEADER / NAV --- */
+        header {
+            background-color: var(--cor-secundaria);
+            box-shadow: 0 4px 15px rgba(61, 35, 20, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(111, 78, 55, 0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--cor-escura);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--texto-escuro);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--cor-principal);
+        }
+
+        /* --- HERO SECTION (BANNER PRINCIPAL) --- */
+        .hero {
+            background: linear-gradient(rgba(45, 24, 14, 0.65), rgba(45, 24, 14, 0.65)), 
+                        url("../imagens/donagusta_novo.jpeg") no-repeat center center/cover;
+            background-color: var(--cor-escura);
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* --- BOTÕES REDES SOCIAIS --- */
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-social {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-social:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp { background-color: var(--whatsapp); }
+        .btn-instagram { background-color: var(--instagram); }
+        .btn-tiktok { background-color: var(--tiktok); }
+
+        /* --- SEÇÃO CAFÉS DE MARCA PRÓPRIA --- */
+        .cafes-section {
+            padding: 80px 0;
+            background-color: var(--cor-clara);
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--cor-escura);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--cor-principal);
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+
+        .cafes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .cafe-card {
+            background-color: var(--cor-card);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(61, 35, 20, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(111, 78, 55, 0.15);
+        }
+
+        .cafe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(61, 35, 20, 0.15);
+        }
+
+        .cafe-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--cor-principal);
+        }
+
+        .cafe-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .cafe-tag {
+            background-color: var(--cor-escura);
+            color: var(--cor-secundaria);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .cafe-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--cor-escura);
+            margin-bottom: 10px;
+        }
+
+        .cafe-info p {
+            font-size: 0.95rem;
+            color: var(--texto-escuro);
+            margin-bottom: 15px;
+        }
+
+        /* --- SEÇÃO PARCERIA PARA EMPRESAS --- */
+        .parceria-section {
+            padding: 80px 0;
+            background-color: var(--cor-escura);
+            color: #fff;
+        }
+
+        .parceria-section .section-title {
+            color: var(--cor-secundaria);
+        }
+
+        .parceria-section .section-subtitle {
+            color: #fff;
+            opacity: 0.9;
+        }
+
+        .parceria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .parceria-card {
+            background-color: rgba(255, 255, 255, 0.04);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(230, 204, 178, 0.15);
+            transition: transform 0.3s;
+        }
+
+        .parceria-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .parceria-card i {
+            font-size: 2.5rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 20px;
+        }
+
+        .parceria-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .parceria-card p {
+            font-size: 0.95rem;
+            color: #ddd;
+        }
+
+        .parceria-cta {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-parceria {
+            background-color: var(--whatsapp);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn-parceria:hover {
+            transform: scale(1.03);
+            background-color: #20ba56;
+        }
+
+        /* --- SEÇÃO LOCALIZAÇÃO E MAPA --- */
+        .map-section {
+            padding: 80px 0;
+            background-color: var(--cor-secundaria);
+        }
+
+        .map-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: var(--cor-clara);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(61, 35, 20, 0.06);
+            border: 1px solid rgba(111, 78, 55, 0.1);
+        }
+
+        .map-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--cor-escura);
+            margin-bottom: 15px;
+        }
+
+        .map-info p {
+            margin-bottom: 20px;
+            color: var(--texto-escuro);
+        }
+
+        .address-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .address-detail i {
+            color: var(--cor-principal);
+            font-size: 1.4rem;
+            margin-top: 3px;
+        }
+
+        .btn-mapa {
+            background-color: var(--cor-principal);
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-mapa:hover {
+            background-color: var(--cor-escura);
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid var(--cor-card);
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--cor-escura);
+            color: var(--cor-secundaria);
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        footer p {
+            margin-bottom: 15px;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .hero { height: 90vh; }
+            .map-container { grid-template-columns: 1fr; gap: 25px; padding: 20px; }
+            .map-frame { height: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV BAR (MENU FIXO) -->
+    <header>
+        <div class="container nav">
+            <a href="#" class="logo">Dona Gusta</a>
+            <div class="nav-links">
+                <a href="#inicio">Início</a>
+                <a href="#cafes">Nossos Cafés</a>
+                <a href="#parcerias">Empresas</a>
+                <a href="#localizacao">Como Chegar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (BANNER DA ENTRADA) -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h1>Padaria Dona Gusta</h1>
+            <p>O cheirinho de pão quentinho e o sabor único do nosso café artesanal.</p>
+            
+            <div class="social-buttons">
+                <a href="https://api.whatsapp.com/send?phone=5538991206051&text=oi" target="_blank" aria-label="WhatsApp" target="_blank" class="btn-social btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Faça seu Pedido
+                </a>
+                <a href="https://www.instagram.com/donagustapadaria/" target="_blank" class="btn-social btn-instagram">
+                    <i class="fab fa-instagram"></i> Siga no Instagram
+                </a>
+                <a href="https://www.tiktok.com/@donagustapadaria?lang=en" target="_blank" class="btn-social btn-tiktok">
+                    <i class="fab fa-tiktok"></i> Assista no TikTok
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CAFÉS MARCA PRÓPRIA (ATUALIZADA) -->
+    <section id="cafes" class="cafes-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Cafés Especiais</h2>
+            <p class="section-subtitle">Sabor exclusivo com grãos selecionados da nossa marca própria</p>
+            
+            <div class="cafes-grid">
+                <!-- CAFÉ 1 -->
+                <div class="cafe-card">
+                    <img src="../imagens/tradicional_café.jpeg" alt="Café Dona Gusta Tradicional" class="cafe-img">
+                    <div class="cafe-info">
+                        <span class="cafe-tag">Marca Própria</span>
+                        <h3>Dona Gusta Tradicional</h3>
+                        <p>Aquele café encorpado com gosto de aconchego, perfeito para acompanhar o pão na chapa de todo dia.</p>
+                    </div>
+                </div>
+                <!-- CAFÉ 2 -->
+                <div class="cafe-card">
+                    <img src="../imagens/gurmet_café.jpeg" alt="Café Dona Gusta Gourmet" class="cafe-img">
+                    <div class="cafe-info">
+                        <span class="cafe-tag">100% Arábica</span>
+                        <h3>Dona Gusta Gourmet</h3>
+                        <p>Notas levemente adocicadas e aroma marcante. Uma experiência sofisticada para os amantes de café.</p>
+                    </div>
+                </div>
+                <!-- CAFÉ 3 -->
+                <div class="cafe-card">
+                    <img src="../imagens/especial_café.jpeg" alt="Café Dona Gusta Especial" class="cafe-img">
+                    <div class="cafe-info">
+                        <span class="cafe-tag">Café Especial</span>
+                        <h3>Dona Gusta Especial</h3>
+                        <p>Grãos nobres selecionados com rigorosa torra artesanal, proporcionando um sabor marcante, equilibrado e inesquecível.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO PARCERIA PARA EMPRESAS -->
+    <section id="parcerias" class="parceria-section">
+        <div class="container">
+            <h2 class="section-title">Parceria para Empresas</h2>
+            <p class="section-subtitle">Leve o sabor e a qualidade da Dona Gusta para o seu negócio ou evento</p>
+            
+            <div class="parceria-grid">
+                <div class="parceria-card">
+                    <i class="fas fa-coffee"></i>
+                    <h4>Coffee Breaks & Eventos</h4>
+                    <p>Montamos a mesa ideal para reuniões, treinamentos e eventos corporativos com pães, quitandas e nossos cafés de marca própria.</p>
+                </div>
+                <div class="parceria-card">
+                    <i class="fas fa-truck"></i>
+                    <h4>Fornecimento Recorrente</h4>
+                    <p>Entregas programadas de pães fresquinhos e produtos artesanais para comércios, lanchonetes e refeitórios em Montes Claros.</p>
+                </div>
+                <div class="parceria-card">
+                    <i class="fas fa-percentage"></i>
+                    <h4>Condições Especiais</h4>
+                    <p>Descontos exclusivos e faturamento customizado para pedidos recorrentes ou em grande escala para CNPJ.</p>
+                </div>
+            </div>
+
+            <div class="parceria-cta">
+                <a href="https://api.whatsapp.com/send?phone=5538991206051&text=oi" target="_blank" aria-label="WhatsApp" target="_blank" class="btn-social btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Fale com um consultor
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO MAPA E LOCALIZAÇÃO -->
+    <section id="localizacao" class="map-section">
+        <div class="container">
+            <div class="map-container">
+                <div class="map-info">
+                    <h3>Venha nos Visitar</h3>
+                    <p>Dê uma pausa no seu dia para tomar um café fresquinho e saborear nossas delícias direto do forno.</p>
+                    
+                    <div class="address-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Endereço:</strong><br>
+                            Rua Francisco Muniz Magalhães, nº 147<br>
+                            Bairro Jardim Brasil — Montes Claros - MG
+                        </div>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Rua+Francisco+Muniz+Magalhaes+147+Jardim+Brasil+Montes+Claros+MG" target="_blank" class="btn-mapa">
+                        <i class="fas fa-directions"></i> Abrir no Google Maps
+                    </a>
+                </div>
+                
+                <div class="map-frame">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.326!2d-43.8647!3d-16.7105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a6bc99e72943d2f%3A0x676342d4cf28babc!2sR.%20Francisco%20Muniz%20Magalh%C3%A3es%2C%20147%20-%20Jardim%20Brasil%2C%20Montes%20Claros%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1717785000000!5m2!1spt-BR!2sbr" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            
+           <ul>
+                    <li><strong>Segunda a sábado:</strong> 06:00 às 20:00</li>
+                    <li><strong>Domingos e feriados:</strong> 06:00 às 12:00</li>
+                </ul>
+
+                <p>&copy; 2026 Padaria Dona Gusta. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
