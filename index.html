@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Padaria Dona Gusta - Tradição e Sabor</title>
-    <!-- Font Awesome para os Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
@@ -83,9 +81,10 @@
         }
 
         /* --- HERO SECTION (BANNER PRINCIPAL) --- */
+        /* CONFIGURADO: Imagem lendo direto da raiz (solta) */
         .hero {
             background: linear-gradient(rgba(45, 24, 14, 0.65), rgba(45, 24, 14, 0.65)), 
-                        url("../imagens/donagusta_novo.jpeg") no-repeat center center/cover;
+                        url("donagusta_novo.jpeg") no-repeat center center/cover;
             background-color: var(--cor-escura);
             height: 80vh;
             display: flex;
@@ -381,7 +380,13 @@
         }
 
         footer p {
+            margin-top: 15px;
             margin-bottom: 15px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
         }
 
         /* --- RESPONSIVIDADE --- */
@@ -396,7 +401,6 @@
 </head>
 <body>
 
-    <!-- NAV BAR (MENU FIXO) -->
     <header>
         <div class="container nav">
             <a href="#" class="logo">Dona Gusta</a>
@@ -409,14 +413,13 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (BANNER DA ENTRADA) -->
     <section id="inicio" class="hero">
         <div class="container hero-content">
             <h1>Padaria Dona Gusta</h1>
             <p>O cheirinho de pão quentinho e o sabor único do nosso café artesanal.</p>
             
             <div class="social-buttons">
-                <a href="https://api.whatsapp.com/send?phone=5538991206051&text=oi" target="_blank" aria-label="WhatsApp" target="_blank" class="btn-social btn-whatsapp">
+                <a href="https://api.whatsapp.com/send?phone=5538991206051&text=oi" target="_blank" aria-label="WhatsApp" class="btn-social btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> Faça seu Pedido
                 </a>
                 <a href="https://www.instagram.com/donagustapadaria/" target="_blank" class="btn-social btn-instagram">
@@ -429,34 +432,30 @@
         </div>
     </section>
 
-    <!-- SEÇÃO CAFÉS MARCA PRÓPRIA (ATUALIZADA) -->
     <section id="cafes" class="cafes-section">
         <div class="container">
             <h2 class="section-title">Nossos Cafés Especiais</h2>
             <p class="section-subtitle">Sabor exclusivo com grãos selecionados da nossa marca própria</p>
             
             <div class="cafes-grid">
-                <!-- CAFÉ 1 -->
                 <div class="cafe-card">
-                    <img src="../imagens/tradicional_café.jpeg" alt="Café Dona Gusta Tradicional" class="cafe-img">
+                    <img src="tradicional_café.jpeg" alt="Café Dona Gusta Tradicional" class="cafe-img">
                     <div class="cafe-info">
                         <span class="cafe-tag">Marca Própria</span>
                         <h3>Dona Gusta Tradicional</h3>
                         <p>Aquele café encorpado com gosto de aconchego, perfeito para acompanhar o pão na chapa de todo dia.</p>
                     </div>
                 </div>
-                <!-- CAFÉ 2 -->
                 <div class="cafe-card">
-                    <img src="../imagens/gurmet_café.jpeg" alt="Café Dona Gusta Gourmet" class="cafe-img">
+                    <img src="gurmet_café.jpeg" alt="Café Dona Gusta Gourmet" class="cafe-img">
                     <div class="cafe-info">
                         <span class="cafe-tag">100% Arábica</span>
                         <h3>Dona Gusta Gourmet</h3>
                         <p>Notas levemente adocicadas e aroma marcante. Uma experiência sofisticada para os amantes de café.</p>
                     </div>
                 </div>
-                <!-- CAFÉ 3 -->
                 <div class="cafe-card">
-                    <img src="../imagens/especial_café.jpeg" alt="Café Dona Gusta Especial" class="cafe-img">
+                    <img src="especial_café.jpeg" alt="Café Dona Gusta Especial" class="cafe-img">
                     <div class="cafe-info">
                         <span class="cafe-tag">Café Especial</span>
                         <h3>Dona Gusta Especial</h3>
@@ -467,7 +466,6 @@
         </div>
     </section>
 
-    <!-- SEÇÃO PARCERIA PARA EMPRESAS -->
     <section id="parcerias" class="parceria-section">
         <div class="container">
             <h2 class="section-title">Parceria para Empresas</h2>
@@ -492,14 +490,13 @@
             </div>
 
             <div class="parceria-cta">
-                <a href="https://api.whatsapp.com/send?phone=5538991206051&text=oi" target="_blank" aria-label="WhatsApp" target="_blank" class="btn-social btn-whatsapp">
+                <a href="https://api.whatsapp.com/send?phone=5538991206051&text=oi" target="_blank" aria-label="WhatsApp" class="btn-social btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> Fale com um consultor
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO MAPA E LOCALIZAÇÃO -->
     <section id="localizacao" class="map-section">
         <div class="container">
             <div class="map-container">
@@ -533,16 +530,13 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
-            
-           <ul>
-                    <li><strong>Segunda a sábado:</strong> 06:00 às 20:00</li>
-                    <li><strong>Domingos e feriados:</strong> 06:00 às 12:00</li>
-                </ul>
-
-                <p>&copy; 2026 Padaria Dona Gusta. Todos os direitos reservados.</p>
+            <ul>
+                <li><strong>Segunda a sábado:</strong> 06:00 às 20:00</li>
+                <li><strong>Domingos e feriados:</strong> 06:00 às 12:00</li>
+            </ul>
+            <p>© 2026 Padaria Dona Gusta. Todos os direitos reservados.</p>
         </div>
     </footer>
 
